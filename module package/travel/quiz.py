@@ -63,7 +63,7 @@ while True:
     if exclude_number =='':
         break
 #리스트에서 뺴자
-    list_class.remove(int(exclude_number))
+    list_class.remove (int(exclude_number))
 #그냥 enter면 반복 끝내자
 #랜덤으로 섞자
 random.shuffle(list_class)
