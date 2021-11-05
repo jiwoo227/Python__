@@ -28,7 +28,11 @@ print(answer)
 while True:
     player = input("숫자 세자리는?(t: top3)")
     if player == 't':
-        history = load_history()
+        try:
+            history = load_history()
+        expect FileNotFoundError:
+            print('history 파일 없음')
+            continue
         print(history)
         continue
     try: #숫자가 아닐 때 에러 처리
