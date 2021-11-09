@@ -8,16 +8,27 @@ class TictatoeGUI:
 
     def init_GUI(self):
         self.CANVAS_SIZE = 300
-        self.root = tkinter.TK()
+        self.root = tkinter.Tk() #mainloop와 같이 윈도우 창을 나타냄
         self.root.title('틱택토')
         self.root.geometry(f'{self.CANVAS_SIZE}x{self.CANVAS_SIZE}')
         self.root.resizable(width=False, height=False)
 
+        self.canvas = tkinter.Canvas(self.root, bg='white', width=self.CANVAS_SIZE, height=self.CANVAS_SIZE)
+        self.canvas.pack()
+
+        self.images ={} # {'X' : PhotoImage객체, 'O' : PhotoImgae객체}
+        self.images['X'] = tkinter.PhotoImage(file='X.gif')
+        self.images['X'] = tkinter.PhotoImage(file='O.gif')
+
+        self.canvas.bind('<Button-1>', self.click_handler) #click_handler 뒤에 ()가 없다는건 지금 실행하는게 아님 ()가 있으면 지금 실행하는것
+
+        self.root.mainloop()
+
     def click_handler(self, event):
-        pass
+        print('click')
 
     def draw_board(self):
         pass
 
-if __name__ == 'main':
+if __name__ == '__main__':
     ttt_GUI = TictatoeGUI()
