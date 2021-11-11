@@ -4,7 +4,7 @@ import pygame
 pygame.init()
 root = Tk()
 root.title("Piano")
-root.geometry('1070x500+0+0')
+root.geometry('860x460+0+0')
 root.configure(background='white')
 
 ABC = Frame(root, bg="pink", bd=10, relief=RIDGE)
@@ -39,11 +39,6 @@ def value_Ds():
     return
 
 
-def value_D():
-    str1.set("D#")
-    sound = pygame.mixer.Sound("C:\music\Music_Notes\C_s.wav")
-    sound.play()
-    return
 
 def value_Fs():
     str1.set("F#")
@@ -135,44 +130,35 @@ def value_E1():
     sound.play()
     return
 
-def value_F1():
-    str1.set("F1")
-    sound = pygame.mixer.Sound("C:\music\Music_Notes\F1.wav")
-    sound.play()
-    return
 
-def value_Ds():
-    str1.set("Ds")
-    sound = pygame.mixer.Sound("C:\music\Music_Notes\C_s.wav")
-    sound.play()
-    return
+
 #
 
 
 Label(ABC1, text="Piano", font=('arial', 20, 'bold'), width=20,padx=8, pady=8,  bg="pink",
 fg="white", justify=CENTER).grid(row=0, column=0, columnspan=11)
 
-btnCs=Button(ABC2, height= 6, width=5, bd=4,text="C#",bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Cs)
+btnCs=Button(ABC2, height= 6, width=5, bd=4,text="도#",bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Cs)
 btnCs.grid(row=0,column=0, padx=5, pady=5)
-btnDs=Button(ABC2, height= 6, width=5, bd=4, text="D#", bg="black", fg="white",font=('arial', 15, 'bold'), command=value_Ds)
+btnDs=Button(ABC2, height= 6, width=5, bd=4, text="레#", bg="black", fg="white",font=('arial', 15, 'bold'), command=value_Ds)
 btnDs.grid(row=0,column=2, padx=5, pady=5)
 
 btnSpace2=Button(ABC2, state=DISABLED, width=2, height=6, bg="pink",relief=FLAT)
 btnSpace2.grid(row=0,column=3, padx=0, pady=0)
 
-btnFs=Button(ABC2, height= 6, width=5, bd=4, text="F#",  bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Fs)
+btnFs=Button(ABC2, height= 6, width=5, bd=4, text="파#",  bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Fs)
 btnFs.grid(row=0,column=4, padx=5, pady=5)
-btnGs=Button(ABC2,height= 6, width=5, bd=4, text="G#",  bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Gs)
+btnGs=Button(ABC2,height= 6, width=5, bd=4, text="솔#",  bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Gs)
 btnGs.grid(row=0,column=6, padx=5, pady=5)
-btnBb=Button(ABC2, height= 6, width=5, bd=4, text="Bd",  bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Bd)
+btnBb=Button(ABC2, height= 6, width=5, bd=4, text="라",  bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Bd)
 btnBb.grid(row=0,column=8, padx=5, pady=5)
 
 btnSpace5 = Button( ABC2, state=DISABLED, width=2, height=6, bg="pink", relief=FLAT)
 btnSpace5.grid( row=0, column=9, padx=0, pady=0 )
 
-btnCs1=Button(ABC2, height= 6, width=5,bd=4, text="C#1", bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Cs1)
+btnCs1=Button(ABC2, height= 6, width=5,bd=4, text="도#", bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Cs1)
 btnCs1.grid(row=0,column=10, padx=5, pady=5)
-btnDs1=Button(ABC2, height= 6, width=5, bd=4, text="#C",bg="black",fg="white", font=('arial', 15, 'bold'), command=value_Ds1)
+btnDs1=Button(ABC2, height= 6, width=5, bd=4, text="레#",bg="black",fg="white", font=('arial', 15, 'bold'), command=value_Ds1)
 btnDs1.grid(row=0,column=12, padx=5, pady=5)
 
 btnC = Button(ABC3, bd=4,height= 7, width=5, text="도", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_C)
@@ -197,8 +183,6 @@ btnD1 = Button(ABC3, bd=4, height= 7, width=5, text="레", bg ="white", fg="blac
 btnD1.grid(row=0, column=8, padx=5, pady=5)
 btnE1 = Button(ABC3, bd=4, height= 7, width=5, text="미", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_E1)
 btnE1.grid(row=0, column=9, padx=5, pady=5)
-btnF1 = Button(ABC3, bd=4,height= 7, width=5, text="파", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_F1)
-btnF1.grid(row=0, column=10, padx=5, pady=5)
 
 
 
