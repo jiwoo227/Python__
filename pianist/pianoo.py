@@ -4,21 +4,21 @@ import pygame
 pygame.init()
 root = Tk()
 root.title("Piano")
-root.geometry('1100x570+0+0')
+root.geometry('1070x500+0+0')
 root.configure(background='white')
 
-ABC = Frame(root, bg="powder blue", bd=10, relief=RIDGE)
+ABC = Frame(root, bg="pink", bd=10, relief=RIDGE)
 ABC.grid()
 
-ABC1 = Frame(ABC, bg="powder blue", bd=10, relief=RIDGE)
+ABC1 = Frame(ABC, bg="pink", bd=5, relief=RIDGE)
 ABC1.grid()
-ABC2 = Frame(ABC, bg="powder blue", relief=RIDGE)
+ABC2 = Frame(ABC, bg="pink", relief=RIDGE)
 ABC2.grid()
-ABC3 = Frame(ABC, bg="powder blue",relief=RIDGE)
+ABC3 = Frame(ABC, bg="pink",relief=RIDGE)
 ABC3.grid()
 
 str1 = StringVar()
-str1.set("Just Like Music")
+str1.set("Piano")
 # Date1 = StringVar()
 # Time1= StringVar()
 #
@@ -26,10 +26,11 @@ str1.set("Just Like Music")
 # Time1.set(time.strftime("%H:%M:%S"))
 
 def value_Cs():
-    str1.set("#C")
+    str1.set("C#")
     sound=pygame.mixer.Sound("C:\music\Music_Notes\C_s.wav")
     sound.play()
     return
+
 
 def value_Ds():
     str1.set("D#")
@@ -38,7 +39,7 @@ def value_Ds():
     return
 
 
-def value_Ds():
+def value_D():
     str1.set("D#")
     sound = pygame.mixer.Sound("C:\music\Music_Notes\C_s.wav")
     sound.play()
@@ -77,6 +78,18 @@ def value_Ds1():
 def value_C():
     str1.set("C")
     sound = pygame.mixer.Sound("C:\music\Music_Notes\C.wav")
+    sound.play()
+    return
+
+def value_D():
+    str1.set("D")
+    sound = pygame.mixer.Sound("C:\music\Music_Notes\D.wav")
+    sound.play()
+    return
+
+def value_E():
+    str1.set("E")
+    sound = pygame.mixer.Sound("C:\music\Music_Notes\E.wav")
     sound.play()
     return
 
@@ -129,68 +142,62 @@ def value_F1():
     return
 
 def value_Ds():
-    str1.set("D#")
+    str1.set("Ds")
     sound = pygame.mixer.Sound("C:\music\Music_Notes\C_s.wav")
     sound.play()
     return
+#
 
 
-Label(ABC1, text="Piano", font=('arial', 14, 'bold'), padx=8, pady=8, bd=4, bg="gray",
+Label(ABC1, text="Piano", font=('arial', 20, 'bold'), width=20,padx=8, pady=8,  bg="pink",
 fg="white", justify=CENTER).grid(row=0, column=0, columnspan=11)
 
-txtDisplay = Entry(ABC1, textvariable=str1, font=('artial', 10, 'bold'), bd=10, bg="powder blue",
-                  fg="white", width=50, justify=CENTER).grid(row=1, column=1, pady=1)
-# txtDate = Entry(ABC1, textvariable=str1, font=('artial', 18, 'bold'), bd=34, bg="powder blue",
-#                   fg="white", width=28, justify=CENTER).grid(row=1, column=1, pady=1)
-# txtTime = Entry(ABC1, textvariable=str1, font=('artial', 18, 'bold'), bd=34, bg="powder blue",
-#                   fg="white", width=28, justify=CENTER).grid(row=1, column=1, pady=1)
-
-btnCs=Button(ABC2, height= 6, width=6, bd=4, text="C#",bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Cs())
+btnCs=Button(ABC2, height= 6, width=5, bd=4,text="C#",bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Cs)
 btnCs.grid(row=0,column=0, padx=5, pady=5)
-btnDs=Button(ABC2, height= 6, width=6, bd=4, text="D#", bg="black", fg="white",font=('arial', 15, 'bold'), command=value_Ds())
+btnDs=Button(ABC2, height= 6, width=5, bd=4, text="D#", bg="black", fg="white",font=('arial', 15, 'bold'), command=value_Ds)
 btnDs.grid(row=0,column=2, padx=5, pady=5)
 
-btnSpace2=Button(ABC2, state=DISABLED, width=2, height=6, bg="powder blue",relief=FLAT)
+btnSpace2=Button(ABC2, state=DISABLED, width=2, height=6, bg="pink",relief=FLAT)
 btnSpace2.grid(row=0,column=3, padx=0, pady=0)
 
-btnFs=Button(ABC2, height= 6, width=6, bd=4, text="F#",  bg="black", fg="white", font=('arial', 15, 'bold'))
+btnFs=Button(ABC2, height= 6, width=5, bd=4, text="F#",  bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Fs)
 btnFs.grid(row=0,column=4, padx=5, pady=5)
-btnGs=Button(ABC2, height= 6, width=6, bd=4, text="G#",  bg="black", fg="white", font=('arial', 15, 'bold'))
+btnGs=Button(ABC2,height= 6, width=5, bd=4, text="G#",  bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Gs)
 btnGs.grid(row=0,column=6, padx=5, pady=5)
-btnBb=Button(ABC2, height= 6, width=6, bd=4, text="Bd",  bg="black", fg="white", font=('arial', 15, 'bold'))
+btnBb=Button(ABC2, height= 6, width=5, bd=4, text="Bd",  bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Bd)
 btnBb.grid(row=0,column=8, padx=5, pady=5)
 
-btnSpace5 = Button( ABC2, state=DISABLED, width=2, height=6, bg="powder blue", relief=FLAT )
+btnSpace5 = Button( ABC2, state=DISABLED, width=2, height=6, bg="pink", relief=FLAT)
 btnSpace5.grid( row=0, column=9, padx=0, pady=0 )
 
-btnCs1=Button(ABC2, height= 6, width=6, bd=4, text="C#1", bg="black", fg="white", font=('arial', 15, 'bold'))
+btnCs1=Button(ABC2, height= 6, width=5,bd=4, text="C#1", bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Cs1)
 btnCs1.grid(row=0,column=10, padx=5, pady=5)
-btnDs1=Button(ABC2, height= 6, width=6, bd=4, text="#C",bg="black",fg="white", font=('arial', 15, 'bold'))
+btnDs1=Button(ABC2, height= 6, width=5, bd=4, text="#C",bg="black",fg="white", font=('arial', 15, 'bold'), command=value_Ds1)
 btnDs1.grid(row=0,column=12, padx=5, pady=5)
 
-btnC = Button(ABC3, bd=4, width=6, height=8, text="C", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnC = Button(ABC3, bd=4,height= 7, width=5, text="도", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_C)
 btnC.grid(row=0, column=0, padx=5, pady=5)
-btnD = Button(ABC3, bd=4, width=6, height=8, text="D", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnD = Button(ABC3, bd=4, height= 7, width=5, text="레", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_D)
 btnD.grid(row=0, column=1, padx=5, pady=5)
-btnE = Button(ABC3, bd=4, width=6, height=8, text="E", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnE = Button(ABC3, bd=4, height= 7, width=5, text="미", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_E)
 btnE.grid(row=0, column=2, padx=5, pady=5)
-btnF = Button(ABC3, bd=4, width=6, height=8, text="F", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnF = Button(ABC3, bd=4, height= 7, width=5, text="파", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_F)
 btnF.grid(row=0, column=3, padx=5, pady=5)
 
-btnG = Button(ABC3, bd=4, width=6, height=8, text="G", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnG = Button(ABC3, bd=4, height= 7, width=5, text="솔", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_G)
 btnG.grid(row=0, column=4, padx=5, pady=5)
-btnA = Button(ABC3, bd=4, width=6, height=8, text="A", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnA = Button(ABC3, bd=4, height= 7, width=5, text="라", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_A)
 btnA.grid(row=0, column=5, padx=5, pady=5)
-btnB = Button(ABC3, bd=4, width=6, height=8, text="B", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnB = Button(ABC3, bd=4, height=7, width=5, text="시", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_B)
 btnB.grid(row=0, column=6, padx=5, pady=5)
-btnC1 = Button(ABC3, bd=4, width=6, height=8, text="C1", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnC1 = Button(ABC3, bd=4,height= 7, width=5, text="도", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_C1)
 btnC1.grid(row=0, column=7, padx=5, pady=5)
 
-btnD1 = Button(ABC3, bd=4, width=6, height=8, text="D1", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnD1 = Button(ABC3, bd=4, height= 7, width=5, text="레", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_D1)
 btnD1.grid(row=0, column=8, padx=5, pady=5)
-btnE1 = Button(ABC3, bd=4, width=6, height=8, text="E1", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnE1 = Button(ABC3, bd=4, height= 7, width=5, text="미", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_E1)
 btnE1.grid(row=0, column=9, padx=5, pady=5)
-btnF1 = Button(ABC3, bd=4, width=6, height=8, text="F1", bg ="white", fg="black", font=('arial', 15, 'bold'))
+btnF1 = Button(ABC3, bd=4,height= 7, width=5, text="파", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_F1)
 btnF1.grid(row=0, column=10, padx=5, pady=5)
 
 
