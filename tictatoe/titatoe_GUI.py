@@ -1,4 +1,6 @@
 import tkinter
+from tkinter import messagebox
+
 from tictatoe_game_engine import TictatoeGameEngine
 
 class TictatoeGUI:
@@ -34,11 +36,36 @@ class TictatoeGUI:
         #show board
         self.game_engine.show_board()
         #승자가 있거나 무승부일 때 게임오버, 결과 출력하기
-        #change turn
+        winner = self.game_engine.set_winner()
+
+        if winner == 'X' or winner == 'O':
+            messagebox.showinfo('Game Over', f'{winner} 이겼어요!')
+            self.root.quit()
+        elif winner == 'd':
+            messagebox.showinfo('Game Over', '무승부네요')
+            self.root.quit()
+
+        self.game_engine.change_turn()
+        #change turn,
 
 
-    def draw_board(self):
-        pass
+    def draw_board(self): # 화면
+        TILE_SIZE = self.CANVAS_SIZE // self.game_engine.SIZE #100
+        self.canvas.delete('all')
+
+        x = 0
+        y = 0
+
+        for i, v in enumerate(self.game_engine.board):
+            if v == '.':
+                pass
+            else:       #elif v == 'X' or v =='O'
+                self.canvas.create_image(x, y, achor = 'nw', image = self.images[v])
+            x += TILE_SIZE
+            if i % self.game_engine.SIZE == self.game_engine.SIZE - 1:
+                x = 0
+                y += TILE_SIZE
+
 
     def coordinate_to_position(self,x, y):
 
