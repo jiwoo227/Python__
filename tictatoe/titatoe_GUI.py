@@ -20,7 +20,7 @@ class TictatoeGUI:
         self.images['X'] = tkinter.PhotoImage(file='X.gif')
         self.images['X'] = tkinter.PhotoImage(file='O.gif')
 
-        self.canvas.bind('<Button-1>', self.click_handler)
+        self.canvas.bind('<Button-1>', self.click_handler) #********중요*************
         #click_handler 뒤에 ()가 없다는건 지금 실행하는게 아님 ()가 있으면 지금 실행하는것
 
         self.root.mainloop()
@@ -41,6 +41,28 @@ class TictatoeGUI:
         pass
 
     def coordinate_to_position(self,x, y):
-       pass
+
+        # if 0 <= y < 100:
+        #     row = 1
+        # elif 100 <= y < 200:
+        #     row = 2
+        # elif 200 <= y < 300:
+        #     row = 3
+        #
+        # if 0 <= x < 100:
+        #     col = 1
+        # elif 100 <= x < 200:
+        #     col = 2
+        # elif 200 <= x < 300:
+        #     col = 3
+        #
+        # return row,col
+
+        row = y//100+1
+        col = x//100+1
+
+        return row,col
+
+
 if __name__ == '__main__':
     ttt_GUI = TictatoeGUI()
