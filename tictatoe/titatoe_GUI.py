@@ -20,7 +20,7 @@ class TictatoeGUI:
 
         self.images ={} # {'X' : PhotoImage객체, 'O' : PhotoImgae객체}
         self.images['X'] = tkinter.PhotoImage(file='X.gif')
-        self.images['X'] = tkinter.PhotoImage(file='O.gif')
+        self.images['O'] = tkinter.PhotoImage(file='O.gif')
 
         self.canvas.bind('<Button-1>', self.click_handler) #********중요*************
         #click_handler 뒤에 ()가 없다는건 지금 실행하는게 아님 ()가 있으면 지금 실행하는것
@@ -34,7 +34,7 @@ class TictatoeGUI:
         #set row,col
         self.game_engine.set(row,col)
         #show board
-        self.game_engine.show_board()
+        self.draw_board()
         #승자가 있거나 무승부일 때 게임오버, 결과 출력하기
         winner = self.game_engine.set_winner()
 
@@ -60,7 +60,7 @@ class TictatoeGUI:
             if v == '.':
                 pass
             else:       #elif v == 'X' or v =='O'
-                self.canvas.create_image(x, y, achor = 'nw', image = self.images[v])
+                self.canvas.create_image(x, y, anchor = 'nw', image = self.images[v])
             x += TILE_SIZE
             if i % self.game_engine.SIZE == self.game_engine.SIZE - 1:
                 x = 0
