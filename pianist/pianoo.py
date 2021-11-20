@@ -4,37 +4,65 @@ import pygame
 
 piano = Tk()
 piano.title('피아니스트')
+icon = pygame.image.load('ufo.png')
+pygame.display.set_icon(icon)
 piano.geometry('350x300+0+0')
 pygame.init()
 
+def btn_click():
+    label = Label(piano, text='피아니스트가 되어보실래요? ')
+    label.pack()
+    btn1=Button(piano, width=8, height=5, text="YES", bg="black", fg="white", command=btn1_click1)
+    btn1.pack()
+    btn2=Button(piano, width=8, height=5, text="NO", bg="black", fg="white", command=btn2_click)
+    btn2.pack()
+
+    btn1.place(x=100, y=100)
+    btn2.place(x=200, y=100)
+    label.place(x=105, y=50)
+
+
+def btn1_click1():
+    label = Label(piano, text='둘 중에 하나를 선택해주세요!' )
+    label.pack()
+    btn1 = Button( piano, width=8, height=5, text="피아노치기", bg="black", fg="white", command=pianist)
+    btn1.pack()
+    btn2 = Button(piano, width=8, height=5, text="게임하기", bg="black", fg="white" )
+    btn2.pack()
+    btn3=Button(piano, width=2, height=1, bg="black", fg="white",text="뒤로", command=btn_click)
+    btn3.pack()
+
+    btn1.place( x=100, y=100 )
+    btn2.place( x=200, y=100 )
+    btn3.place(x=0, y=0)
+    label.place( x=105, y=50 )
 
 def btn1_click():
     label = Label(piano, text='둘 중에 하나를 선택해주세요!' )
     label.pack()
     btn1 = Button( piano, width=8, height=5, text="피아노치기", bg="black", fg="white", command=pianist)
     btn1.pack()
-
-    btn2 = Button(piano, width=8, height=5, text="게임하기", bg="black", fg="white" )
+    btn2 = Button(piano, width=8, height=5, text="악보보기", bg="black", fg="white" )
     btn2.pack()
 
     btn1.place( x=100, y=100 )
     btn2.place( x=200, y=100 )
     label.place( x=105, y=50 )
 
-
 def btn2_click():
-    btn2["text"] = "YES를 눌러"
+    btn2["text"] = "YES 눌러라"
 
 label = Label(piano, text='피아니스트가 되어보실래요? ')
 label.pack()
-btn1=Button(piano, width=8, height=5, text="YES", bg="black", fg="white", command=btn1_click)
+btn1=Button(piano, width=8, height=5, text="YES", bg="black", fg="white", command=btn1_click1)
 btn1.pack()
-
 btn2=Button(piano, width=8, height=5, text="NO", bg="black", fg="white", command=btn2_click)
 btn2.pack()
+
 btn1.place(x=100, y=100)
 btn2.place(x=200, y=100)
 label.place(x=105, y=50)
+
 
 def pianist():
     piano.title("Piano")
@@ -53,6 +81,8 @@ def pianist():
 
     str1 = StringVar()
     str1.set("Piano")
+    # str11 = StringVar()
+    # str11.set("back")
 # Date1 = StringVar()
 # Time1= StringVar()
 #
@@ -170,6 +200,10 @@ def pianist():
 
     Label(ABC1, text="Piano", font=('arial', 20, 'bold'), width=20,padx=8, pady=8,  bg="pink",
     fg="white", justify=CENTER).grid(row=0, column=0, columnspan=11)
+    # Button( piano, width=2, height=2, bg="black", fg="white", text="뒤로", command=btn_click )
+    # txt1 = Entry(ABC1, textvariable=str11,  font=('arial', 20, 'bold'), width=20,padx=8, pady=8,  bg="pink",
+    # fg="white", justify=CENTER).grid(row=0, column=0, columnspan=11)
+
 
     btnCs=Button(ABC2, height= 6, width=5, bd=4,text="도#",bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Cs)
     btnCs.grid(row=0,column=0, padx=5, pady=5)
