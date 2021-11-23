@@ -1,70 +1,67 @@
+import tkinter as ttk
 from tkinter import *
 from tkinter import messagebox
 import pygame
 
 piano = Tk()
 piano.title('피아니스트')
-icon = pygame.image.load('ufo.png')
-pygame.display.set_icon(icon)
 piano.geometry('350x300+0+0')
 pygame.init()
 
+
 def btn_click():
-    label = Label(piano, text='피아니스트가 되어보실래요? ')
-    label.pack()
-    btn1=Button(piano, width=8, height=5, text="YES", bg="black", fg="white", command=btn1_click1)
-    btn1.pack()
-    btn2=Button(piano, width=8, height=5, text="NO", bg="black", fg="white", command=btn2_click)
+    piano = ttk.Toplevel()
+    piano.geometry( '350x300+0+0' )
+    label1 = Label(piano, text='둘 중에 원하는 것을 선택해줘!' )
+    label1.pack()
+    btn2 = Button( piano, width=8, height=5, text="피아노치기", bg="black", fg="white", command=btn1_click)
     btn2.pack()
-
-    btn1.place(x=100, y=100)
-    btn2.place(x=200, y=100)
-    label.place(x=105, y=50)
-
-
-def btn1_click1():
-    label = Label(piano, text='둘 중에 하나를 선택해주세요!' )
-    label.pack()
-    btn1 = Button( piano, width=8, height=5, text="피아노치기", bg="black", fg="white", command=pianist)
-    btn1.pack()
-    btn2 = Button(piano, width=8, height=5, text="게임하기", bg="black", fg="white" )
-    btn2.pack()
-    btn3=Button(piano, width=2, height=1, bg="black", fg="white",text="뒤로", command=btn_click)
+    btn3 = Button(piano, width=8, height=5, text="악보보기", bg="black", fg="white")
     btn3.pack()
 
-    btn1.place( x=100, y=100 )
-    btn2.place( x=200, y=100 )
-    btn3.place(x=0, y=0)
-    label.place( x=105, y=50 )
+    btn2.place( x=100, y=100 )
+    btn3.place( x=200, y=100 )
+    label1.place( x=105, y=50 )
+
+def btnn_click():
+    piano = ttk.Toplevel()
+    piano.geometry( '350x300+0+0' )
+    label1 = Label( piano, text='좋아를 선택해야 돼!!' )
+    label1.pack()
+
+    label1.place( x=150, y=100 )
+
+
+
+
+label = Label(piano, text='  피아니스트가 되어보자!')
+label.pack()
+btn1=Button(piano, width=8, height=5, text="좋아!", bg="black", fg="white", command=btn_click)
+btn1.pack()
+btn4=Button(piano, width=8, height=5, text="음..별로!", bg="black", fg="white",  command=btnn_click)
+btn4.pack()
+
+label.place(x=105, y=50)
+btn1.place( x=100, y=100 )
+btn4.place( x=200, y=100 )
 
 def btn1_click():
-    label = Label(piano, text='둘 중에 하나를 선택해주세요!' )
-    label.pack()
-    btn1 = Button( piano, width=8, height=5, text="피아노치기", bg="black", fg="white", command=pianist)
-    btn1.pack()
-    btn2 = Button(piano, width=8, height=5, text="악보보기", bg="black", fg="white" )
+
+    piano = ttk.Toplevel()
+    piano.geometry( '350x300+0+0' )
+    label1 = Label( piano, text='치고싶은 피아노를 선택해줘!' )
+    label1.pack()
+    btn2 = Button( piano, width=8, height=5, text="1번 피아노", bg="black", fg="white", command=piano1)
     btn2.pack()
+    btn3 = Button( piano, width=8, height=5, text="2번 피아노", bg="black", fg="white", command=ppiano)
+    btn3.pack()
 
-    btn1.place( x=100, y=100 )
-    btn2.place( x=200, y=100 )
-    label.place( x=105, y=50 )
-
-def btn2_click():
-    btn2["text"] = "YES 눌러라"
-
-label = Label(piano, text='피아니스트가 되어보실래요? ')
-label.pack()
-btn1=Button(piano, width=8, height=5, text="YES", bg="black", fg="white", command=btn1_click1)
-btn1.pack()
-btn2=Button(piano, width=8, height=5, text="NO", bg="black", fg="white", command=btn2_click)
-btn2.pack()
-
-btn1.place(x=100, y=100)
-btn2.place(x=200, y=100)
-label.place(x=105, y=50)
-
-
-def pianist():
+    btn2.place( x=100, y=100 )
+    btn3.place( x=200, y=100 )
+    label1.place( x=105, y=50 )
+4864
+def piano1():
+    piano = ttk.Toplevel()
     piano.title("Piano")
     piano.geometry('860x460+0+0')
     piano.configure(background='white')
@@ -81,13 +78,7 @@ def pianist():
 
     str1 = StringVar()
     str1.set("Piano")
-    # str11 = StringVar()
-    # str11.set("back")
-# Date1 = StringVar()
-# Time1= StringVar()
-#
-# Date1.set(time.strftime("%d/%m/%Y"))
-# Time1.set(time.strftime("%H:%M:%S"))
+
 
     def value_Cs():
         str1.set("C#")
@@ -195,15 +186,8 @@ def pianist():
         return
 
 
-
-#
-
     Label(ABC1, text="Piano", font=('arial', 20, 'bold'), width=20,padx=8, pady=8,  bg="pink",
     fg="white", justify=CENTER).grid(row=0, column=0, columnspan=11)
-    # Button( piano, width=2, height=2, bg="black", fg="white", text="뒤로", command=btn_click )
-    # txt1 = Entry(ABC1, textvariable=str11,  font=('arial', 20, 'bold'), width=20,padx=8, pady=8,  bg="pink",
-    # fg="white", justify=CENTER).grid(row=0, column=0, columnspan=11)
-
 
     btnCs=Button(ABC2, height= 6, width=5, bd=4,text="도#",bg="black", fg="white", font=('arial', 15, 'bold'), command=value_Cs)
     btnCs.grid(row=0,column=0, padx=5, pady=5)
@@ -250,5 +234,86 @@ def pianist():
     btnD1.grid(row=0, column=8, padx=5, pady=5)
     btnE1 = Button(ABC3, bd=4, height= 7, width=5, text="미", bg ="white", fg="black", font=('arial', 15, 'bold'), command=value_E1)
     btnE1.grid(row=0, column=9, padx=5, pady=5)
+
+
+def piano2():
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+            if event.type == pygame.K_0:
+                if event.type == pygame.K_7:
+                    ppiano().key_7()
+                elif event.type == pygame.K_8:
+                    ppiano().key_8()
+                elif event.type == pygame.K_9:
+                    ppiano().key_9()
+                elif event.type == pygame.K_4:
+                    ppiano().key_4()
+                elif event.type == pygame.K_5:
+                    ppiano().key_5()
+                elif event.type == pygame.K_6:
+                    ppiano().key_6()
+                elif event.type == pygame.K_1:
+                    ppiano().key_1()
+                elif event.type == pygame.K_2:
+                    ppiano().key_2()
+                elif event.type == pygame.K_3:
+                    ppiano().key_3()
+
+
+
+def ppiano():
+    piano = ttk.Toplevel()
+    piano.geometry( '345x345+0+0' )
+    str1 = StringVar()
+    str1.set( "Piano" )
+
+    def value_E1():
+        str1.set( "E1" )
+        sound = pygame.mixer.Sound( "C:\music\Music_Notes\E1.wav" )
+        sound.play()
+        return
+
+    def key_7():
+        button7 = ttk.Button( piano, text="7", width=15, height=7, command=value_E1)
+        button7.grid( row=1, column=0 )
+
+    def key_8():
+        button8 = ttk.Button(piano, text="8", width=15, height=7, command=value_E1)
+        button8.grid( row=1, column=1 )
+
+    def key_9():
+        button9 = ttk.Button( piano, text="9" , width=15, height=7, command=value_E1)
+        button9.grid( row=1, column=2 )
+
+    def key_4():
+        button4 = ttk.Button( piano, text="4" , width=15, height=7, command=value_E1)
+        button4.grid( row=2, column=0 )
+
+    def key_5():
+        button5 = ttk.Button( piano, text="5", width=15, height=7, command=value_E1)
+        button5.grid( row=2, column=1 )
+
+    def key_6():
+        button6 = ttk.Button( piano, text="6", width=15, height=7, command=value_E1)
+        button6.grid( row=2, column=2 )
+
+    def key_1():
+        button1 = ttk.Button( piano, text="1" , width=15, height=7, command=value_E1)
+        button1.grid( row=3, column=0 )
+
+    def key_2():
+        button2 = ttk.Button(piano, text="2", width=15, height=7, command=value_E1)
+        button2.grid( row=3, column=1 )
+    def key_3():
+        button3 = ttk.Button( piano, text="3" , width=15, height=7, command=value_E1)
+        button3.grid( row=3, column=2 )
+
+
+
+
 
 piano.mainloop()
