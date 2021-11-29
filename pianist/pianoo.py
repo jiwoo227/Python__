@@ -1,4 +1,5 @@
 import tkinter as ttk
+import tkinter
 from tkinter import *
 from tkinter import messagebox
 import pygame
@@ -61,7 +62,8 @@ def btn1_click():
     btn7.pack()
     btn8 = Button( piano, width=8, height=4, text="악보\n직접\n쓰기", bg="black", fg="white", command= songinput)
     btn8.pack()
-    btn9 = Button(piano, width=5, height=1, text="눌러봐!",bg="black", fg="white")
+    # btn9 = Button(piano, width=5, height=1, text="눌러봐!",bg="black", fg="white", command=btnclick)
+    btn10 = Button( piano, width=5, height=1, text="피아노", bg="black", fg="white", command=piano1)
 
     btn1.place(x=30, y=100)
     btn2.place( x=110, y=100 )
@@ -71,10 +73,22 @@ def btn1_click():
     btn6.place( x=110, y=200 )
     btn7.place( x=190, y=200 )
     btn8.place( x=270, y=200 )
-    btn9.place( x=300, y=10 )
+    # btn9.place( x=300, y=10 )
+    btn10.place(x=40, y=10)
     label1.place( x=120, y=40 )
 
+
+text1_count=0
+text2_count=0
+text3_count=0
+text4_count=0
+text5_count=0
+text6_count=0
+textt_count=0
+
 def text1():
+    global text1_count
+    text1_count += 1
     piano = ttk.Toplevel()
     piano.geometry( "300x300" )
 
@@ -82,84 +96,155 @@ def text1():
     label.pack()
     label1 = Label( piano,text="계이름\n\n도 도도도 도 미 솔솔미 도 솔솔미 솔솔미 도도도\n솔 솔 미 도 솔 솔 솔 솔 솔 미 도 솔 솔 솔\n 솔 솔 미 도 솔솔솔라솔 도 솔 도 솔 미레도\n\n" )
     label1.pack()
-    label1 = Label( piano, text="번호\n\n11223333" )
-    label1.pack()
+    label2 = Label( piano, text=text1_count)
+    label3 = Label( piano, text="번 조회했어!\n\n" )
+    label4 = Label(piano, text="모든 악보의 조회수가 궁금하지 않니?")
+
+    button = Button(piano, width=10, height=1, text="이걸 눌러봐! ", command=btnclick)
+    button.pack()
+    label2.pack()
+
+    label2.place(x=115, y=180)
+    label3.place( x=125, y=180 )
+    label4.place(x=55, y=200)
+    button.place( x=120, y=230 )
 
 
 def text2():
+    global text2_count
+    text2_count += 1
     piano = ttk.Toplevel()
     piano.geometry( "300x300" )
 
     label = Label( piano, text="나비야\n", font=(15) )
     label.pack()
-    label1 = Label( piano,text="계이름\n\n솔 미 미 파 레 레 도레미파 솔 솔 솔\n솔 미 미 미 파레레 도미솔솔 미 미 미\n\n" )
+    label1 = Label( piano, text="계이름\n\n솔 미 미 파 레 레 도레미파 솔 솔 솔\n솔 미 미 미 파레레 도미솔솔 미 미 미\n\n" )
     label1.pack()
-    label1 = Label( piano, text="번호\n\n11223333" )
-    label1.pack()
+    label2 = Label( piano, text=text2_count )
+    label3 = Label( piano, text="번 조회했어!\n\n" )
+    label4 = Label( piano, text="모든 악보의 조회수가 궁금하지 않니?" )
+
+    button = Button( piano, width=10, height=1, text="이걸 눌러봐! ", command=btnclick )
+    button.pack()
+    label2.pack()
+
+    label2.place( x=115, y=180 )
+    label3.place( x=125, y=180 )
+    label4.place( x=55, y=200 )
+    button.place( x=120, y=230 )
 
 
 def text3():
     piano = ttk.Toplevel()
     piano.geometry( "300x300" )
+    global text3_count
+    text3_count += 1
 
     label = Label( piano, text="비행기\n", font=(15) )
     label.pack()
     label1 = Label( piano, text="계이름\n\n미 레도 레 미 미 미 레 레 레 미 솔 솔\n미 레도 레 미 미 미 레 레 미 레 도\n\n" )
+    label2 = Label( piano, text=text3_count )
+    label3 = Label( piano, text="번 조회했어!\n\n" )
+    label4 = Label( piano, text="모든 악보의 조회수가 궁금하지 않니?" )
+
+    button = Button( piano, width=10, height=1, text="이걸 눌러봐! ", command=btnclick )
+    button.pack()
     label1.pack()
-    label1 = Label( piano,text="번호\n\n11223333" )
-    label1.pack()
+    label2.pack()
+
+    label2.place( x=115, y=180 )
+    label3.place( x=125, y=180 )
+    label4.place( x=55, y=200 )
+    button.place( x=120, y=230 )
 
 def text4():
     piano = ttk.Toplevel()
     piano.geometry( "300x300" )
+    global text4_count
+    text4_count += 1
 
     label = Label( piano, text="생일 축하 노래\n", font=(15) )
     label.pack()
-    label1 = Label( piano,text="계이름\n\n도도레 도 파파미 도도레 도 솔솔파\n도 라 파 미 레 세세라 파 솔 솔라\n\n" )
+    label1 = Label( piano, text="계이름\n\n도도레 도 파파미 도도레 도 솔솔파\n도 라 파 미 레 세세라 파 솔 솔라\n\n" )
+    label2 = Label( piano, text=text4_count )
+    label3 = Label( piano, text="번 조회했어!\n\n" )
+    label4 = Label( piano, text="모든 악보의 조회수가 궁금하지 않니?" )
+
+    button = Button( piano, width=10, height=1, text="이걸 눌러봐! ", command=btnclick )
+    button.pack()
     label1.pack()
-    label1 = Label( piano, text="번호\n\n11223333" )
-    label1.pack()
+    label2.pack()
+
+    label2.place( x=115, y=180 )
+    label3.place( x=125, y=180 )
+    label4.place( x=55, y=200 )
+    button.place( x=120, y=230 )
 
 
 def text5():
     piano = ttk.Toplevel()
     piano.geometry( "300x300" )
+    global text5_count
+    text5_count += 1
 
-    label = Label( piano, text="학교 종이 땡땡떙\n", font=(15) )
+    label = Label( piano, text="학교 종이 땡땡땡\n", font=(15) )
     label.pack()
-    label1 = Label( piano,text="계이름\n\n솔솔 라라 솔솔 미 솔솔 미미 레\n 솔솔 라라 솔솔 미 솔 미 레 미 도\n\n" )
+    label1 = Label( piano, text="계이름\n\n솔솔 라라 솔솔 미 솔솔 미미 레\n 솔솔 라라 솔솔 미 솔 미 레 미 도\n\n" )
     label1.pack()
-    label1 = Label( piano, text="번호\n\n11223333" )
+    label2 = Label( piano, text=text5_count )
+    label3 = Label( piano, text="번 조회했어!\n\n" )
+    label4 = Label( piano, text="모든 악보의 조회수가 궁금하지 않니?" )
+
+    button = Button( piano, width=10, height=1, text="이걸 눌러봐! ", command=btnclick )
+    button.pack()
     label1.pack()
+    label2.pack()
+
+    label2.place( x=115, y=180 )
+    label3.place( x=125, y=180 )
+    label4.place( x=55, y=200 )
+    button.place( x=120, y=230 )
 
 
 def text6():
     piano = ttk.Toplevel()
     piano.geometry( "300x300" )
+    global text6_count
+    text6_count += 1
 
-    label = Label( piano, text="햇볕은 쨍쩅\n", font=(15) )
+    label = Label( piano, text="햇볕은 쨍쨍\n", font=(15) )
     label.pack()
-    label1 = Label( piano,text="계이름\n\n도미솔 솔 솔 미라솔미 도도\n도시도라솔라솔라 도시도라솔라솔라\n 라 라 솔 솔 미 미 솔 솔 레도레미 도 도\n\n" )
+    label1 = Label( piano, text="계이름\n\n도미솔 솔 솔 미라솔미 도도\n도시도라솔라솔라 도시도라솔라솔라\n 라 라 솔 솔 미 미 솔 솔 레도레미 도 도\n\n" )
+    label2 = Label( piano, text=text6_count )
+    label3 = Label( piano, text="번 조회했어!\n\n" )
+    label4 = Label( piano, text="모든 악보의 조회수가 궁금하지 않니?" )
+
+    button = Button( piano, width=10, height=1, text="이걸 눌러봐! ", command=btnclick )
+    button.pack()
     label1.pack()
-    label1 = Label( piano, text="번호\n\n11223333" )
-    label1.pack()
+    label2.pack()
+
+    label2.place( x=115, y=180 )
+    label3.place( x=125, y=180 )
+    label4.place( x=55, y=200 )
+    button.place( x=120, y=230 )
 
 
 def textt():
     piano = ttk.Toplevel()
-    piano.geometry( "270x240" )
+    piano.geometry( "300x300" )
+    global textt_count
+    textt_count += 1
     f = open ("song.txt",'r', encoding="utf-8")
     text=f.read()
 
-    label = ttk.Label(piano, text = text)
-    label.pack()
-
+    label = ttk.Label(piano, text=text)
+    label.pack();
 
 def songsave(text):
     f = open('song.txt','a', encoding="utf-8")
     f.write(text+"\n")
     msg.showwarning( '저장완료', '저장되었습니다' )
-    # piano.songinput.destroy()
 
 def songinput():
     piano = ttk.Toplevel()
@@ -175,10 +260,111 @@ def songinput():
     button_put.pack()
 
 
+
     label.place(x=50, y=50)
     textbox.place(x=20, y=80)
     button_put.place(x=200, y=76)
 
+def btnclick():
+    piano = ttk.Toplevel()
+    piano.geometry( "300x320" )
+
+
+    total = tkinter.Label( piano, text="모든 악보의 클릭수를 알려줄게!", font=(2))
+    total.pack()
+    a = tkinter.Label( piano, text="곰 세마리 악보를" )
+    a.pack()
+    a1 = tkinter.Label(piano, text = text1_count)
+    a1.pack()
+    a2 = tkinter.Label( piano, text="번 조회했어!" )
+    a2.pack()
+    b = tkinter.Label( piano, text="나비야 악보를" )
+    b.pack()
+    b1 = tkinter.Label( piano, text=text2_count )
+    b1.pack()
+    b2 = tkinter.Label( piano, text="번 조회했어!" )
+    b2.pack()
+    c = tkinter.Label( piano, text="비행기 악보를" )
+    c.pack()
+    c1 = tkinter.Label( piano, text=text3_count )
+    c1.pack()
+    c2 = tkinter.Label( piano, text="번 조회했어!" )
+    c2.pack()
+    d = tkinter.Label( piano, text="생일 축하 노래 악보를" )
+    d.pack()
+    d1 = tkinter.Label( piano, text=text4_count )
+    d1.pack()
+    d2 = tkinter.Label( piano, text="번 조회했어!" )
+    d2.pack()
+    e = tkinter.Label( piano, text="학교 종이 땡땡땡 악보를" )
+    e.pack()
+    e1 = tkinter.Label( piano, text=text5_count )
+    e1.pack()
+    e2 = tkinter.Label( piano, text="번 조회했어!" )
+    e2.pack()
+    f = tkinter.Label( piano, text="햇볕은 쨍쨍 악보를" )
+    f.pack()
+    f1 = tkinter.Label( piano, text=text6_count )
+    f1.pack()
+    f2 = tkinter.Label( piano, text="번 조회했어!" )
+    f2.pack()
+    g = tkinter.Label( piano, text="나의 악보를" )
+    g.pack()
+    g1 = tkinter.Label( piano, text=textt_count )
+    g1.pack()
+    g2 = tkinter.Label( piano, text="번 조회했어!" )
+    g2.pack()
+    h = tkinter.Label( piano, text="모든 악보를" )
+    h.pack()
+    h1 = tkinter.Label( piano, text=text1_count + text2_count + text3_count + text4_count + text5_count + text6_count + textt_count)
+    h1.pack()
+    h2 = tkinter.Label( piano, text="번 조회했어!" )
+    h2.pack()
+    # i = tkinter.Label( piano, text="모든 악보의 평균은" )
+    # i.pack()
+    # i1 = tkinter.Label( piano,text=((text1_count + text2_count + text3_count + text4_count + text5_count + text6_count + textt_count )%7))
+    # i1.pack()
+    # i2 = tkinter.Label( piano, text="이야!" )
+    # i2.pack()
+
+
+
+    total.place(x=5, y=50)
+    a.place(x=65, y=100)
+    a1.place( x=160, y=100 )
+    a2.place( x=170, y=100 )
+
+    c.place( x=80, y=120 )
+    c1.place( x=160, y=120 )
+    c2.place( x=170, y=120 )
+
+    b.place( x=80, y=140 )
+    b1.place( x=160, y=140 )
+    b2.place( x=170, y=140 )
+
+    d.place( x=35, y=160 )
+    d1.place( x=160, y=160 )
+    d2.place( x=170, y=160 )
+
+    e.place( x=25, y=180 )
+    e1.place( x=160, y=180 )
+    e2.place( x=170, y=180 )
+
+    f.place( x=50, y=200 )
+    f1.place( x=160, y=200 )
+    f2.place( x=170, y=200 )
+
+    g.place( x=90, y=220 )
+    g1.place( x=160, y=220 )
+    g2.place( x=170, y=220 )
+
+    h.place( x=90, y=250 )
+    h1.place( x=160, y=250 )
+    h2.place( x=170, y=250 )
+
+    # i.place( x=70, y=270 )
+    # i1.place( x=160, y=270 )
+    # i2.place( x=170, y=270 )
 
 
 
@@ -186,6 +372,8 @@ def songinput():
 
 
 
+
+    #이미지 레이블
 # def btn2_click():
 #
 #     piano = ttk.Toplevel()
@@ -424,6 +612,85 @@ def piano1():
 #     def key_3():
 #         button3 = ttk.Button( piano, text="3" , width=15, height=7, command=value_E1)
 #         button3.grid( row=3, column=2 )
+
+#def text1():
+#     global text1_count
+#     text1_count += 1
+#     piano = ttk.Toplevel()
+#     piano.geometry( "300x300" )
+#
+#     one = open( "one.txt", 'r', encoding="utf-8" )
+#     text = one.read()
+#
+#
+#
+#     label = ttk.Label( piano, text=text )
+#     label.pack()
+#
+#
+# def text2():
+#     piano = ttk.Toplevel()
+#     piano.geometry( "300x300" )
+#     global text2_count
+#     text2_count += 1
+#
+#     one = open( "two.txt", 'r', encoding="utf-8" )
+#     text = one.read()
+#
+#     label = ttk.Label( piano, text=text )
+#     label.pack()
+#
+# def text3():
+#
+#     piano = ttk.Toplevel()
+#     piano.geometry( "300x300" )
+#     global text3_count
+#     text3_count += 1
+#
+#     one = open( "three.txt", 'r', encoding="utf-8" )
+#     text = one.read()
+#
+#     label = ttk.Label( piano, text=text )
+#     label.pack()
+#
+# def text4():
+#     piano = ttk.Toplevel()
+#     piano.geometry( "300x300" )
+#     global text4_count
+#     text4_count += 1
+#
+#     one = open( "four.txt", 'r', encoding="utf-8" )
+#     text = one.read()
+#
+#     label = ttk.Label( piano, text=text )
+#     label.pack()
+#
+#
+# def text5():
+#     piano = ttk.Toplevel()
+#     piano.geometry( "300x300" )
+#     global text5_count
+#     text5_count += 1
+#
+#     textFont = tkinter.font.Font( size=25, weight="bold" )
+#     one = open( "five.txt", 'r', encoding="utf-8" )
+#     text = one.read()
+#
+#     label = ttk.Label( piano, text=text )
+#     label.pack()
+#
+#
+# def text6():
+#     piano = ttk.Toplevel()
+#     piano.geometry( "300x300" )
+#     global text6_count
+#     text6_count += 1
+#
+#     one = open( "six.txt", 'r', encoding="utf-8" )
+#     text = one.read()
+#
+#     label = ttk.Label( piano, text=text )
+#     label.pack()
 
 
 piano.mainloop()
