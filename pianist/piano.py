@@ -366,9 +366,6 @@ def btnclick():
     h1.place( x=150, y=250 )
     h2.place( x=170, y=250 )
 
-    # i.place( x=70, y=270 )
-    # i1.place( x=160, y=270 )
-    # i2.place( x=170, y=270 )
 
 
 def piano1():
